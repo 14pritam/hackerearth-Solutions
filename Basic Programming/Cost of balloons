@@ -1,0 +1,64 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main() {
+ 
+    int T,cnt=0,cnt1=0,p=0,q=0,x=0,y=0,j=0,i=0,n,ans;
+ 
+    cin>>T;
+ 
+    while(i<T)
+ 
+    {
+ 
+        cin>>x;
+ 
+        cin>>y;
+ 
+        cin>>n;
+ 
+        ans=0;
+ 
+        cnt=0;
+ 
+        cnt1=0;
+ 
+        int arr[n][2];
+ 
+        for(j=0;j<n;j++)
+ 
+        {
+ 
+            cin>>arr[j][0];
+ 
+            cin>>arr[j][1];
+ 
+            if(arr[j][0]==1)
+ 
+                cnt++;
+ 
+            if(arr[j][1]==1)
+ 
+                cnt1++;
+ 
+        }
+ 
+        p=max(x,y);
+ 
+        q=min(x,y);
+ 
+        if(cnt>cnt1)
+ 
+            ans=(cnt*q)+(cnt1*p);
+ 
+        else
+ 
+            ans=(cnt*p)+(cnt1*q);
+ 
+        cout<<ans<<endl;
+ 
+        i++;
+ 
+    }
+ 
+}
+ 
