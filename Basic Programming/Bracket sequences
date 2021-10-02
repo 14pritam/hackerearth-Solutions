@@ -1,0 +1,81 @@
+#include<iostream>
+
+using namespace std;
+
+int main()
+
+{
+
+    int i,j,l,o=0,count=0;
+
+    string s;
+
+    getline(cin,s);
+
+    l=s.length();
+
+    for(i=0;i<l;i++)
+
+    {
+
+        o=0;
+
+        if(s[i]=='(')
+
+        {
+
+            for(j=i;j<l;j++)
+
+            {
+
+                if(s[j]=='(')
+
+                    o++;
+
+                else if(s[j]==')')
+
+                    o--;
+
+                if(o<0)
+
+                    break;
+
+            }
+
+            if(o>=0)
+
+            {
+
+                for(j=0;j<i;j++)
+
+                {
+
+                    if(s[j]=='(')
+
+                        o++;
+
+                    else if(s[j]==')')
+
+                        o--;
+
+                    if(o<0)
+
+                        break;
+
+                }
+
+                if(o==0)
+
+                    count++;
+
+            }   
+
+        }
+
+    }
+
+    cout<< count;
+
+    return 0;
+
+}
